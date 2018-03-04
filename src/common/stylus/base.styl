@@ -1,0 +1,30 @@
+html, body
+  line-height: 1
+  font-weight: 200
+  font-family: 'PingFang SC', 'STHeitiSC-light', 'Helvetica-Light', Arial, sans-serif
+
+.clearfix
+  display: inline-block
+  &:after
+    display: block
+    content: ''
+    height: 0
+    line-height: 0
+    clear: both
+    visibility: hidden
+
+//全局配置DPR
+@media (min-device-pixel-ratio: 1.5)  //如果最小DPR为1.5
+  .border-1px
+    &:after
+      transform: scaleY(.66667)
+
+@media (min-device-pixel-ratio: 2)  //如果最小DPR为2
+  .border-1px
+    &:after
+      transform: scaleY(.5)
+
+@media (min-device-pixel-ratio: 3)  //如果最小DPR为3
+  .border-1px
+    &:after
+      transform: scaleY(.33333)
